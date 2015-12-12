@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # The created VM sets PX4_WINTOOL=y to allow builds to proceed using shared folders with using symlinks.
   # However shared folders are quite slow. If you have rsync installed then this is a faster way of building.
   # In addition there are problems with px4-clean when using shared folders. Using rsync avoids this.
-  # config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__auto: true
+  config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__auto: true
   
   # If you are on windows then you must use a version of git >= 1.8.x to update the submodules
   # in order to build. Older versions of git use absolute paths for submodules which confuses things.
